@@ -27505,26 +27505,77 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _resturantCard = require("./ResturantCard");
 var _resturantCardDefault = parcelHelpers.interopDefault(_resturantCard);
 var _config = require("../config");
-// Body Component for body section: It contain all restaurant cards
-// We are mapping restaurantList array and passing data to RestaurantCard component as props with unique key as index
+var _react = require("react");
+var _s = $RefreshSig$();
 const Body = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "restaurant-list",
-        children: (0, _config.restaurantList).map((restaurant)=>{
-            return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _resturantCardDefault.default), {
-                ...restaurant.data
-            }, restaurant.data.id, false, {
+    _s();
+    // making two local state variable 
+    const [restaurant, setRestaurant] = (0, _react.useState)((0, _config.restaurantList)) //store restolist
+    ;
+    const [searchInput, setSearchInput] = (0, _react.useState)() // store input text
+    ;
+    //filter the resto based on input text    
+    const filter = (searchInput, restaurant)=>{
+        return restaurant.filter((restaurant)=>restaurant.data.name.toLowerCase().includes(searchInput));
+    };
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "search-container",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                        type: "text",
+                        className: "search-input",
+                        placeholder: "search",
+                        value: searchInput,
+                        onChange: (e)=>{
+                            setSearchInput(e.target.value);
+                        }
+                    }, void 0, false, {
+                        fileName: "src/components/Body.js",
+                        lineNumber: 25,
+                        columnNumber: 14
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        onClick: ()=>{
+                            const data = filter(searchInput, restaurant);
+                            setRestaurant(data);
+                        },
+                        children: [
+                            "search ",
+                            searchInput
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/Body.js",
+                        lineNumber: 30,
+                        columnNumber: 14
+                    }, undefined)
+                ]
+            }, void 0, true, {
                 fileName: "src/components/Body.js",
-                lineNumber: 11,
-                columnNumber: 18
-            }, undefined);
-        })
-    }, void 0, false, {
-        fileName: "src/components/Body.js",
-        lineNumber: 9,
-        columnNumber: 7
-    }, undefined);
+                lineNumber: 23,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "restaurant-list",
+                children: restaurant.map((restaurant)=>{
+                    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _resturantCardDefault.default), {
+                        ...restaurant.data
+                    }, restaurant.data.id, false, {
+                        fileName: "src/components/Body.js",
+                        lineNumber: 39,
+                        columnNumber: 24
+                    }, undefined); // in data we have multiple elemet like name,cusines , rating thts why we use spread operator
+                })
+            }, void 0, false, {
+                fileName: "src/components/Body.js",
+                lineNumber: 37,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true);
 };
+_s(Body, "W8UT2FvacmKnoguQsLHSG/HB4g4=");
 _c = Body;
 exports.default = Body;
 var _c;
@@ -27535,7 +27586,7 @@ $RefreshReg$(_c, "Body");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./ResturantCard":"7LKZL","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../config":"jtCLN"}],"7LKZL":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","./ResturantCard":"7LKZL","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../config":"jtCLN","react":"21dqq"}],"7LKZL":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$195a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
