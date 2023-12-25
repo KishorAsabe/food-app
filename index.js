@@ -2,7 +2,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Logo from "./images/appLogo.png"
-import './index.css'; 
+
 
 /* My Food App structure will look like this, 
             1) Header
@@ -1924,7 +1924,7 @@ const Footer = () => {
 
       <i class="fa-solid fa-copyright"></i>2023
       <strong>
-        Food<span>Fire</span>
+        Food<span>Villa</span>
       </strong>
     </div>
   );

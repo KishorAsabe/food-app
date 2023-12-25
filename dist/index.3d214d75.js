@@ -2950,7 +2950,6 @@ var _reactDom = require("react-dom");
 var _reactDomDefault = parcelHelpers.interopDefault(_reactDom);
 var _appLogoPng = require("./images/appLogo.png");
 var _appLogoPngDefault = parcelHelpers.interopDefault(_appLogoPng);
-var _indexCss = require("./index.css");
 /* My Food App structure will look like this, 
             1) Header
                 - Logo
@@ -5054,7 +5053,7 @@ const Footer = ()=>{
                 children: [
                     "Food",
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        children: "Fire"
+                        children: "Villa"
                     }, void 0, false, {
                         fileName: "index.js",
                         lineNumber: 1927,
@@ -5120,7 +5119,7 @@ $RefreshReg$(_c5, "AppLayout");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react/jsx-dev-runtime":"iTorj","react-dom":"j6uA9","./images/appLogo.png":"1R1kU","./index.css":"giGSC"}],"21dqq":[function(require,module,exports) {
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react/jsx-dev-runtime":"iTorj","react-dom":"j6uA9","./images/appLogo.png":"1R1kU"}],"21dqq":[function(require,module,exports) {
 "use strict";
 module.exports = require("a569817e6ea559f6");
 
@@ -29492,6 +29491,6 @@ exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
 exports.getOrigin = getOrigin;
 
-},{}],"giGSC":[function() {},{}]},["3smKr","1xC6H","bB7Pu"], "bB7Pu", "parcelRequire11e5")
+},{}]},["3smKr","1xC6H","bB7Pu"], "bB7Pu", "parcelRequire11e5")
 
 //# sourceMappingURL=index.3d214d75.js.map
