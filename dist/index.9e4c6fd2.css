@@ -148,4 +148,12 @@
   color: #cb3600;
 }
 
+.search-container {
+  gap: 10px;
+  height: 25px;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+}
+
 /*# sourceMappingURL=index.9e4c6fd2.css.map */

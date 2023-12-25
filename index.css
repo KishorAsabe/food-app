@@ -158,3 +158,13 @@
     color: rgb(203, 54, 0);
   }
   
+
+  .search-container{
+    display: flex;
+    gap: 10px;
+    margin: 10px;
+    padding: 10px;
+    height: 25px;
+
+    
+  }
