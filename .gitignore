@@ -1,0 +1,4 @@
+node_modules
+
+#automatically generated
+.parcel-cache
