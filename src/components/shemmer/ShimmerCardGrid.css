@@ -1,0 +1,7 @@
+/* ShimmerCardGrid.css */
+.shimmer-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust column size as needed */
+    gap: 20px; /* Adjust the gap between cards */
+  }
+  
