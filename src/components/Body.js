@@ -1,6 +1,6 @@
 import RestaurantCard from "./ResturantCard";
 import { useEffect, useState } from "react";
-import Shimmer from "./Shimmer";
+import Shimmer from "./shemmer/ShimmerCardContainer ";
 import {swiggy_api_URL} from "../config"
 import { restaurantList } from "../config";
 
