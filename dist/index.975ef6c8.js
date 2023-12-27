@@ -27519,7 +27519,8 @@ var _config = require("../config");
 var _s = $RefreshSig$();
 const Body = ()=>{
     _s();
-    const [restaurant, setRestaurant] = (0, _react.useState)([]); // Initialize as an empty array
+    const [allrestaurant, setAllRestaurant] = (0, _react.useState)([]);
+    const [filterdata, setFilterdata] = (0, _react.useState)([]);
     const [searchInput, setSearchInput] = (0, _react.useState)("");
     (0, _react.useEffect)(()=>{
         getRestaurant();
@@ -27529,18 +27530,18 @@ const Body = ()=>{
             const data = await fetch((0, _config.swiggy_api_URL));
             const json = await data.json();
             const restoList = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-            setRestaurant(restoList);
+            setAllRestaurant(restoList);
+            setFilterdata(restoList);
         } catch (error) {
             console.error("Error fetching API data:", error);
         }
     }
-    const filter = (searchInput, restaurantList)=>{
-        return restaurantList.filter((restaurant)=>restaurant.info.name.toLowerCase().includes(searchInput.toLowerCase()));
+    const filter = (searchInput, allrestaurant)=>{
+        return allrestaurant.filter((restaurant)=>restaurant.info.name.toLowerCase().includes(searchInput.toLowerCase()));
     };
-    console.log("resto list before useeffect", restaurant);
-    return restaurant?.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
+    return filterdata?.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
         fileName: "src/components/Body.js",
-        lineNumber: 35,
+        lineNumber: 34,
         columnNumber: 37
     }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
@@ -27557,13 +27558,13 @@ const Body = ()=>{
                         }
                     }, void 0, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 39,
+                        lineNumber: 38,
                         columnNumber: 14
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                         onClick: ()=>{
-                            const data = filter(searchInput, restaurant);
-                            setRestaurant(data);
+                            const data = filter(searchInput, allrestaurant);
+                            setFilterdata(data);
                         },
                         children: [
                             "search ",
@@ -27571,33 +27572,33 @@ const Body = ()=>{
                         ]
                     }, void 0, true, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 44,
+                        lineNumber: 43,
                         columnNumber: 14
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/Body.js",
-                lineNumber: 37,
+                lineNumber: 36,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "restaurant-list",
-                children: restaurant.map((rest)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _resturantCardDefault.default), {
+                children: filterdata.map((rest)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _resturantCardDefault.default), {
                         ...rest.info
                     }, rest.info.id, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 52,
+                        lineNumber: 51,
                         columnNumber: 36
                     }, undefined))
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 50,
+                lineNumber: 49,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true);
 };
-_s(Body, "4xMBc9dZCFvcWXsdSMGsqdw1+fs=");
+_s(Body, "VL8JGNG86unzRUP/mP7dEBUt9pQ=");
 _c = Body;
 exports.default = Body;
 var _c;
