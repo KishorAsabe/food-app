@@ -1,5 +1,5 @@
 
-import Logo from "../../images/appLogo.png"
+import Logo from "../assets/appLogo.png"
 
 const Title = () => (
     <a href="/">
