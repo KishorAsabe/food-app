@@ -1,26 +1,39 @@
-import RestaurantCard from "./ResturantCard"
-import {restaurantList}  from "../config"
-import { useState } from "react";
-
-
+import RestaurantCard from "./ResturantCard";
+import { useEffect, useState } from "react";
+import Shimmer from "./Shimmer";
+import {swiggy_api_URL} from "../config"
+import { restaurantList } from "../config";
 
 
 const Body = () => {
-   
-    // making two local state variable 
-     const[restaurant,setRestaurant] = useState(restaurantList)  //store restolist
-     const[searchInput, setSearchInput] = useState() // store input text
+  const [allrestaurant, setAllRestaurant] = useState([]); 
+  const [filterdata , setFilterdata]   = useState([])
+   const [searchInput, setSearchInput] = useState("");
 
+  useEffect(() => {
+    getRestaurant();
+  }, []);
 
-    //filter the resto based on input text    
-    const filter = (searchInput,restaurant)=>{
-          
-       return  restaurant.filter((restaurant)=> restaurant.data.name.toLowerCase().includes(searchInput))
+  async function getRestaurant() {
+    try {
+      const data = await fetch(swiggy_api_URL);
+      const json = await data.json();
+      const restoList =  json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+
+      setAllRestaurant(restoList); 
+      setFilterdata(restoList);
+    } catch (error) {
+      console.error("Error fetching API data:", error);
     }
-    
-    return (
-        <>
-            <div className="search-container">
+  }
+
+  const filter = (searchInput, allrestaurant) => {
+    return allrestaurant.filter((restaurant) => restaurant.info.name.toLowerCase().includes(searchInput.toLowerCase()));
+  };
+   
+  return filterdata?.length === 0? (<Shimmer/>) :(
+    <>
+        <div className="search-container">
             {/* serach feild captur then changing value */}
              <input type="text" className="search-input" placeholder="search" value={searchInput}
                 onChange={(e)=>{setSearchInput(e.target.value)}}
@@ -28,19 +41,18 @@ const Body = () => {
 
              {/* button */}
              <button onClick={()=>{
-                const data = filter(searchInput,restaurant);
-                setRestaurant(data)
+                const data = filter(searchInput,allrestaurant);
+                setFilterdata(data)
              }}>search {searchInput}</button>
             </div>
-            
-              
-            <div className="restaurant-list">
-                {restaurant.map((restaurant) => {
-                return <RestaurantCard key={restaurant.data.id} {...restaurant.data} />; // in data we have multiple elemet like name,cusines , rating thts why we use spread operator
-                })}
-            </div>
-        </>
-    );
-  };
 
-  export default Body;
+      <div className="restaurant-list">
+        {
+          filterdata.map((rest) => <RestaurantCard key={rest.info.id} {...rest.info} />)
+        }
+      </div>
+    </>
+  );
+};
+
+export default Body;
