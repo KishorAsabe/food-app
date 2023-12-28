@@ -1,28 +1,33 @@
-
+import { useState } from "react";
 import Logo from "../assets/appLogo.png"
 
 const Title = () => (
-    <a href="/">
-      <img className="logo" src={Logo} alt="Food villa logo" />
-    </a>
-  );
-  
-  // Header component for header section: Logo, Nav Items
-  const Header = () => {
-    return (
-      <div className="header">
-        <Title />
-        <div className="nav-items">
-          <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Contact</li>
-            <li><i class="fa-solid fa-cart-shopping"></i></li>
-          </ul>
-        </div>
-      </div>
-    );
+  <a href="/">
+    <img className="logo" src={Logo} alt="Food villa logo" />
+  </a>
+);
+
+const Header = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
+
+  const toggleLogin = () => {
+    setIsLoggedIn((prevState) => !prevState); // Toggle the login state
   };
 
+  return (
+    <div className="header">
+      <Title />
+      <div className="nav-items">
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+          <li>Contact</li>
+          <li><i className="fa-solid fa-cart-shopping"></i></li>
+          <li onClick={toggleLogin}>{isLoggedIn ? "Logout" : "Login"}</li>
+        </ul>
+      </div>
+    </div>
+  );
+};
 
-  export default Header;
+export default Header;
