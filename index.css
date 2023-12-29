@@ -169,6 +169,13 @@
     
   }
 
+  .menu {
+    
+    display: flex;
+    justify-content: center;
+    gap:30px
+  }
+
 
 
   /* css for shemmer effect */
