@@ -156,6 +156,12 @@
   display: flex;
 }
 
+.menu {
+  justify-content: center;
+  gap: 30px;
+  display: flex;
+}
+
 .shimmer-card {
   background: #fff;
   border-radius: 8px;
