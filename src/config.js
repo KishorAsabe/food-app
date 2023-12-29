@@ -3,6 +3,41 @@ export const IMG_CDN_URL ="https://res.cloudinary.com/swiggy/image/upload/fl_los
 
 export const  swiggy_api_URL   = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.624480699999998&page_type=DESKTOP_WEB_LISTING"
 
+export const swiggy_menu_api = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.6126255&lng=77.04108959999999&restaurantId="
+// menu items api card type key
+export const MENU_ITEM_TYPE_KEY = "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory";
+export const RESTAURANT_TYPE_KEY = "type.googleapis.com/swiggy.presentation.food.v2.Restaurant";
+export const DISH_ITEM_TYPE_KEY = "type.googleapis.com/swiggy.presentation.food.v2.Dish" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // RestaurantList is JSON Data for displaying cards
  export const restaurantList = [
   {
