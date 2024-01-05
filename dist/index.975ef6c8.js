@@ -34106,18 +34106,194 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactRouterDom = require("react-router-dom");
-var _config = require("../config");
 var _shimmer = require("./Shimmer");
 var _shimmerDefault = parcelHelpers.interopDefault(_shimmer);
+var _config = require("../../src/config");
+var _useRestaurant = require("../../Utils/Hooks/useRestaurant");
+var _useRestaurantDefault = parcelHelpers.interopDefault(_useRestaurant);
 var _s = $RefreshSig$();
 const Restmenu = ()=>{
     _s();
     const { id } = (0, _reactRouterDom.useParams)();
+    //we use hook to get  Rstaurant
+    const { restaurant, menuItems } = (0, _useRestaurantDefault.default)(id);
+    return !restaurant ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
+        fileName: "src/components/Restmenu.js",
+        lineNumber: 20,
+        columnNumber: 26
+    }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "menu",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                        src: (0, _config.IMG_CDN_URL) + restaurant.cloudinaryImageId
+                    }, void 0, false, {
+                        fileName: "src/components/Restmenu.js",
+                        lineNumber: 24,
+                        columnNumber: 6
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                        children: [
+                            "ID:",
+                            id
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/Restmenu.js",
+                        lineNumber: 25,
+                        columnNumber: 7
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                        children: [
+                            "name:",
+                            restaurant.name
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/Restmenu.js",
+                        lineNumber: 26,
+                        columnNumber: 7
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                        children: [
+                            " cost for two:",
+                            restaurant.costForTwoMessage
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/Restmenu.js",
+                        lineNumber: 27,
+                        columnNumber: 7
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/Restmenu.js",
+                lineNumber: 23,
+                columnNumber: 6
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                        children: "Menu"
+                    }, void 0, false, {
+                        fileName: "src/components/Restmenu.js",
+                        lineNumber: 31,
+                        columnNumber: 6
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                        children: menuItems?.map((menu)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                children: menu?.name
+                            }, menu?.id, false, {
+                                fileName: "src/components/Restmenu.js",
+                                lineNumber: 34,
+                                columnNumber: 34
+                            }, undefined))
+                    }, void 0, false, {
+                        fileName: "src/components/Restmenu.js",
+                        lineNumber: 32,
+                        columnNumber: 7
+                    }, undefined)
+                ]
+            }, void 0, true)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/Restmenu.js",
+        lineNumber: 22,
+        columnNumber: 5
+    }, undefined);
+};
+_s(Restmenu, "yQgCIz/jJfqV1l9s2yoba81MT5A=", false, function() {
+    return [
+        (0, _reactRouterDom.useParams)
+    ];
+});
+_c = Restmenu;
+exports.default = Restmenu; // In JavaScript, when you're accessing an object property whose name contains special characters or starts with characters that aren't allowed in variable names (like @type), you cannot directly use dot notation (object.property). Instead, you must use square bracket notation (object['property']) to access such properties.
+var _c;
+$RefreshReg$(_c, "Restmenu");
+
+  $parcel$ReactRefreshHelpers$9b86.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","./Shimmer":"g6ZGj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../Utils/Hooks/useRestaurant":"6bgPG","../../src/config":"jtCLN"}],"g6ZGj":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$0b04 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$0b04.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _shimmerCardCss = require("./shemmer/ShimmerCard.css"); // Create this CSS file for styling
+const ShimmerCard = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "shimmer-card",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            className: "shimmer-content",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "shimmer-img"
+                }, void 0, false, {
+                    fileName: "src/components/Shimmer.js",
+                    lineNumber: 8,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "shimmer-text"
+                }, void 0, false, {
+                    fileName: "src/components/Shimmer.js",
+                    lineNumber: 9,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "shimmer-text"
+                }, void 0, false, {
+                    fileName: "src/components/Shimmer.js",
+                    lineNumber: 10,
+                    columnNumber: 9
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "src/components/Shimmer.js",
+            lineNumber: 7,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/components/Shimmer.js",
+        lineNumber: 6,
+        columnNumber: 5
+    }, undefined);
+};
+_c = ShimmerCard;
+exports.default = ShimmerCard;
+var _c;
+$RefreshReg$(_c, "ShimmerCard");
+
+  $parcel$ReactRefreshHelpers$0b04.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./shemmer/ShimmerCard.css":"9KiGe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9KiGe":[function() {},{}],"6bgPG":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$1187 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$1187.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _config = require("../../src/config");
+var _s = $RefreshSig$();
+const UseRestaurant = (id)=>{
+    _s();
     const [restaurant, setRestaurant] = (0, _react.useState)(null);
     const [menuItems, setMenuItems] = (0, _react.useState)([]);
-    (0, _react.useEffect)(()=>{
-        getRestomenu();
-    }, []);
     async function getRestomenu() {
         try {
             const response = await fetch((0, _config.swiggy_menu_api) + id);
@@ -34143,105 +34319,59 @@ const Restmenu = ()=>{
             setRestaurant(null);
         }
     }
-    return !restaurant ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
-        fileName: "src/components/Restmenu.js",
-        lineNumber: 56,
-        columnNumber: 26
-    }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "menu",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                        src: (0, _config.IMG_CDN_URL) + restaurant.cloudinaryImageId
-                    }, void 0, false, {
-                        fileName: "src/components/Restmenu.js",
-                        lineNumber: 60,
-                        columnNumber: 6
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                        children: [
-                            "ID:",
-                            id
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/components/Restmenu.js",
-                        lineNumber: 61,
-                        columnNumber: 7
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                        children: [
-                            "name:",
-                            restaurant.name
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/components/Restmenu.js",
-                        lineNumber: 62,
-                        columnNumber: 7
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                        children: [
-                            " cost for two:",
-                            restaurant.costForTwoMessage
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/components/Restmenu.js",
-                        lineNumber: 63,
-                        columnNumber: 7
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/Restmenu.js",
-                lineNumber: 59,
-                columnNumber: 6
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                        children: "Menu"
-                    }, void 0, false, {
-                        fileName: "src/components/Restmenu.js",
-                        lineNumber: 67,
-                        columnNumber: 6
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
-                        children: menuItems?.map((menu)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                children: menu?.name
-                            }, menu?.id, false, {
-                                fileName: "src/components/Restmenu.js",
-                                lineNumber: 70,
-                                columnNumber: 34
-                            }, undefined))
-                    }, void 0, false, {
-                        fileName: "src/components/Restmenu.js",
-                        lineNumber: 68,
-                        columnNumber: 7
-                    }, undefined)
-                ]
-            }, void 0, true)
-        ]
-    }, void 0, true, {
-        fileName: "src/components/Restmenu.js",
-        lineNumber: 58,
-        columnNumber: 5
-    }, undefined);
+    (0, _react.useEffect)(()=>{
+        getRestomenu();
+    }, []);
+    // we have return  multiple state  or multiple values 
+    return {
+        restaurant,
+        menuItems
+    };
 };
-_s(Restmenu, "w1ExI4Am/4Gv/iCI9L1Jp6YDtKY=", false, function() {
-    return [
-        (0, _reactRouterDom.useParams)
-    ];
-});
-_c = Restmenu;
-exports.default = Restmenu; // In JavaScript, when you're accessing an object property whose name contains special characters or starts with characters that aren't allowed in variable names (like @type), you cannot directly use dot notation (object.property). Instead, you must use square bracket notation (object['property']) to access such properties.
+_s(UseRestaurant, "4p/A2YHov6R5/827jQjksLrmeXQ=");
+_c = UseRestaurant;
+exports.default = UseRestaurant; //import { swiggy_menu_api, RESTAURANT_TYPE_KEY,IMG_CDN_URL,DISH_ITEM_TYPE_KEY,MENU_ITEM_TYPE_KEY } from '../config';
+ // const [restaurant, setRestaurant] = useState(null);
+ // const [menuItems, setMenuItems] = useState([]);
+ // useEffect(()=>{
+ //     getRestomenu()
+ //   },[])
+ //     async function getRestomenu() {
+ //       try {
+ //         const response = await fetch(swiggy_menu_api + id);
+ //         const json = await response.json();
+ //         console.log(json)
+ //         const restaurantData1 = json?.data?.cards?.map(x => x.card)
+ //         const restaurantData = restaurantData1?.find(x => x && x.card['@type'] === RESTAURANT_TYPE_KEY)?.card?.info || null;
+ //        // console.log(restaurant)
+ //         const menuItemsData = json?.data?.cards?.find((x)=>x.groupedCard)?.groupedCard?.cardGroupMap?.REGULAR?.cards?.map((x)=>x.card?.card)?.filter(x=>x["@type"] == MENU_ITEM_TYPE_KEY)?.map(x => x.itemCards).flat()?.map(x => x.card?.info) ;
+ //         // const menuItemsData1 = json?.data?.cards?.find((x)=>x.groupedCard)?.groupedCard?.cardGroupMap?.REGULAR?.cards.find(x =>x.card?.card["@type"] == MENU_ITEM_TYPE_KEY)?.card?.card?.itemCards?.map((x)=>x.card?.info)
+ //         // console.log("menuItemsData1",menuItemsData1)
+ //         //to remove unique id warning
+ //         const uniqueMenuItems = [];
+ //         menuItemsData.forEach((item) => {
+ //           if (!uniqueMenuItems.find(x => x.id === item.id)) {
+ //             uniqueMenuItems.push(item);
+ //           }
+ //         })
+ //         setMenuItems(uniqueMenuItems);
+ //         setRestaurant(restaurantData)
+ //        // console.log("menuItems",menuItems)
+ //       } catch (e) {
+ //         console.error(e);
+ //         setMenuItems([]);
+ //         setRestaurant(null);
+ //       }
+ //     }
 var _c;
-$RefreshReg$(_c, "Restmenu");
+$RefreshReg$(_c, "UseRestaurant");
 
-  $parcel$ReactRefreshHelpers$9b86.postlude(module);
+  $parcel$ReactRefreshHelpers$1187.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","../config":"jtCLN","./Shimmer":"g6ZGj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"jtCLN":[function(require,module,exports) {
+},{"react":"21dqq","../../src/config":"jtCLN","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"jtCLN":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "IMG_CDN_URL", ()=>IMG_CDN_URL);
@@ -35155,69 +35285,7 @@ const restaurantList = [
     }
 ];
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"g6ZGj":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$0b04 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$0b04.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _shimmerCardCss = require("./shemmer/ShimmerCard.css"); // Create this CSS file for styling
-const ShimmerCard = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "shimmer-card",
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            className: "shimmer-content",
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "shimmer-img"
-                }, void 0, false, {
-                    fileName: "src/components/Shimmer.js",
-                    lineNumber: 8,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "shimmer-text"
-                }, void 0, false, {
-                    fileName: "src/components/Shimmer.js",
-                    lineNumber: 9,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "shimmer-text"
-                }, void 0, false, {
-                    fileName: "src/components/Shimmer.js",
-                    lineNumber: 10,
-                    columnNumber: 9
-                }, undefined)
-            ]
-        }, void 0, true, {
-            fileName: "src/components/Shimmer.js",
-            lineNumber: 7,
-            columnNumber: 7
-        }, undefined)
-    }, void 0, false, {
-        fileName: "src/components/Shimmer.js",
-        lineNumber: 6,
-        columnNumber: 5
-    }, undefined);
-};
-_c = ShimmerCard;
-exports.default = ShimmerCard;
-var _c;
-$RefreshReg$(_c, "ShimmerCard");
-
-  $parcel$ReactRefreshHelpers$0b04.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./shemmer/ShimmerCard.css":"9KiGe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9KiGe":[function() {},{}],"8yaV8":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8yaV8":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$0606 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
