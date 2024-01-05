@@ -24,6 +24,7 @@ const Header = () => {
           <Link to={"/about"}><li>About</li></Link>
           <Link to={"/contact"}><li>Contact</li></Link>
           <li><i className="fa-solid fa-cart-shopping"></i></li>
+          
           <li onClick={toggleLogin}>{isLoggedIn ? "Logout" : "Login"}</li>
         </ul>
       </div>
