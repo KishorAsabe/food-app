@@ -7,10 +7,9 @@ const Error = ()=> {
     // console.log(err)
     return(
         <>
-            <h1>
-            404 not found</h1>
+          <h1> Error</h1>
         </>
     )
 }
 
-export default Error;
+export default Error
