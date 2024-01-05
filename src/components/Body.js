@@ -4,12 +4,17 @@ import Shimmer from "./shemmer/ShimmerCardContainer ";
 import {swiggy_api_URL} from "../config"
 import { restaurantList } from "../config";
 import { Link } from "react-router-dom";
+import { RiCloudOffLine } from "react-icons/ri";
+import useOnline from "../../Utils/Hooks/useOnline";
 
 
 const Body = () => {
   const [allrestaurant, setAllRestaurant] = useState([]); 
   const [filterdata , setFilterdata]   = useState([])
-   const [searchInput, setSearchInput] = useState("");
+  const [searchInput, setSearchInput] = useState("");
+  
+const isOnline = useOnline()
+
 
   useEffect(() => {
     getRestaurant();
@@ -31,6 +36,17 @@ const Body = () => {
   const filter = (searchInput, allrestaurant) => {
     return allrestaurant.filter((restaurant) => restaurant.info.name.toLowerCase().includes(searchInput.toLowerCase()));
   };
+
+
+  // early return when user is offline show pls check your network connection
+  
+  if(!isOnline)
+  {
+    return <h1><RiCloudOffLine/> offline</h1>
+  }
+
+  //  write any pice of javascript code with culy bracket to  excute
+ { console.log("online" , isOnline)}
    
   return filterdata?.length === 0? (<Shimmer/>) :(
     <>
